@@ -905,11 +905,18 @@ A Colab with the full code is [here](https://colab.research.google.com/drive/1ea
 -   Expressions of bias [@santurkar2023opinions]
 -   A tendency to repeat back a user’s stated views (“sycophancy”) [@perez2022discovering]
 
-# Some implications {background-color="#40666e"}
+# Implications {background-color="#40666e"}
 
 ## Implications
 
--   Additionally, machine-authored prose and human-authored prose don’t always look the same. [@herbold2023large; @markey2024dense]
+-  A group at CMU was inspired by claims that were circulating when ChatGPT was first introduced. (e.g., "Wow! I asked ChatGPT to write a podcast and it looks pretty good!!!")
+-  We wondered what the text it produces looks like when it is repeated. (e.g., "What happens if you ask it to write 100 podcasts?")
+-  We gave it the same writing prompt that students are given in 36-200, generated 100 introduction, and compared those with introductions written by the actual students and introductions that appear in published, data-driven, academic papers.
+-  Then, we tagged the data using Biber's [-@biber1991variation] features (which counts things like passives, nominalizations, attributive adjectives, etc.).
+
+## Implications
+
+-    It turns out, machine-authored prose and human-authored prose don’t really look the same in their morphosyntactic and functional features. [@herbold2023large; @markey2024dense]
 
 ![Projection of student, published, and ChatGPT-generated writing onto the first two linear discriminants, based on the 67 Biber features.](img/img_2024_reorientation/lda_scatter.svg)
 
@@ -1019,6 +1026,69 @@ ld1_tbl |>
 
 ## Implications
 
+::: {style="font-size: 60%;"}
+-   ChatGPT, for example, produces a more restricted set of modal verbs -- one that is different from both expert and novice writers.
+:::
+
+```{r}
+#| echo: false
+#| warning: false
+#| results: asis
+#| tbl-cap: "Frequency of different modal verbs, often modulating the confidence of claims, in the different types of writing."
+
+modal_freq <- readr::read_csv("data/data_2024_reorientation/modal_freq.csv")
+
+modal_freq <- modal_freq |>
+  gt::gt(groupname_col = 'modal_type') |>
+  gt::cols_label(
+    token =  gt::md("Modal verb"),
+    AF_chatgpt =  gt::md("ChatGPT"),
+    AF_published =  gt::md("Published"),
+    AF_student =  gt::md("Student"),
+    RF_chatgpt =  gt::md("ChatGPT"),
+    RF_published =  gt::md("Published"),
+    RF_student =  gt::md("Student"),
+  ) |> 
+  gt::tab_spanner(
+    label = "Absolute Frequency",
+    columns = c(AF_chatgpt, AF_published, AF_student)
+  ) |>
+  gt::tab_spanner(
+    label =  gt::md("Relative Frequency (per 10^5^ words)"),
+    columns = c(RF_chatgpt, RF_published, RF_student)
+  ) |>
+  gt::fmt_number(
+    columns = c(RF_chatgpt, RF_published, RF_student),
+    decimals = 2
+  ) |>
+  gt::tab_style(
+    style = list(
+      gt::cell_text(style = "italic",
+                align = "right")
+    ),
+    locations =  gt::cells_body(
+      columns = token,
+    )
+  )
+
+modal_freq |>
+  gt::opt_table_font(weight = "bolder") |>
+  gt::tab_options(quarto.disable_processing = TRUE,
+                  table.font.size = 14) |>
+  gt::as_raw_html()
+```
+
+## Implications
+
+![Excerpts from texts produced by ChatGPT](img/img_2024_reorientation/gpt_excerpts_01.png){width=80%}
+
+::: aside
+The LLM has a propensity to condense information into chunked noun phrases, constructed as either *noun* + *noun* or *adjective* + *noun* sequences. Such sequences are sometimes aggregated using the coordinator *and*. On the one hand, these phrases can project a kind of authoritative voice. On the other, their content can range from vague, to ambiguous, to vapid. (What exactly is “a comprehensive dataset encompassing [..] healthcare utilization”?) At issue here is what pertinent information is compressed out of these phrases.
+:::
+
+## Implications
+
+-   Lest you think, "Well, that was a pretty small study..."
 -   We also created an experiment at scale, with 10,000 samples, across 9 text-types, and querying 4 different models (ChatGPT 3.5, ChatGPT 4.0, Llama 3 8B-Base, and Llama 3 8B-Instruct).
 
 ```{r}
@@ -1113,80 +1183,15 @@ feature_imp |>
   gt::as_raw_html()
 ```
 
-## Implications
-
-### Human-generated vs. machine-generated text
-
--   Excerpts from texts produced by ChatGPT
-
-![](img/img_2024_reorientation/gpt_excerpts_01.png)
-
-::: notes
-The LLM has a propensity to condense information into chunked noun phrases, constructed as either noun + noun or adjective + noun sequences. Such sequences are sometimes aggregated using the coordinator and. On the one hand, these phrases can project a kind of authoritative voice. On the other, their content can range from vague, to ambiguous, to vapid. (What exactly is “a comprehensive dataset encompassing \[...\] healthcare utilization”?) At issue here is what pertinent information is compressed out of these phrases.
-:::
-
-## Implications
-
-::: {style="font-size: 60%;"}
--   ChatGPT, for example, produces a more restricted set of modal verbs -- one that is different from both expert and novice writers.
-:::
-
-```{r}
-#| echo: false
-#| warning: false
-#| results: asis
-#| tbl-cap: "Frequency of different modal verbs, often modulating the confidence of claims, in the different types of writing."
-
-modal_freq <- readr::read_csv("data/data_2024_reorientation/modal_freq.csv")
-
-modal_freq <- modal_freq |>
-  gt::gt(groupname_col = 'modal_type') |>
-  gt::cols_label(
-    token =  gt::md("Modal verb"),
-    AF_chatgpt =  gt::md("ChatGPT"),
-    AF_published =  gt::md("Published"),
-    AF_student =  gt::md("Student"),
-    RF_chatgpt =  gt::md("ChatGPT"),
-    RF_published =  gt::md("Published"),
-    RF_student =  gt::md("Student"),
-  ) |> 
-  gt::tab_spanner(
-    label = "Absolute Frequency",
-    columns = c(AF_chatgpt, AF_published, AF_student)
-  ) |>
-  gt::tab_spanner(
-    label =  gt::md("Relative Frequency (per 10^5^ words)"),
-    columns = c(RF_chatgpt, RF_published, RF_student)
-  ) |>
-  gt::fmt_number(
-    columns = c(RF_chatgpt, RF_published, RF_student),
-    decimals = 2
-  ) |>
-  gt::tab_style(
-    style = list(
-      gt::cell_text(style = "italic",
-                align = "right")
-    ),
-    locations =  gt::cells_body(
-      columns = token,
-    )
-  )
-
-modal_freq |>
-  gt::opt_table_font(weight = "bolder") |>
-  gt::tab_options(quarto.disable_processing = TRUE,
-                  table.font.size = 14) |>
-  gt::as_raw_html()
-```
 
 ## Implications
 
 ### Key takeaways
 
-1.  ChatGPT produces sentences that are more informationally dense than that of student writing, but the information density is created using repetitive grammatical patterns.
-2.  Human-generated writing demonstrates more modulation of stress or confidence.
-3.  Broadly, LLMs are not as grammatically nimble as human writers.
-4.  LLM-generated text generally does not produce academic prose that engages with core, disciplinary concepts either in the way that experts do or in the way that novice students do. (Though LLMs can arrive at something more like expert writing with iterative prompting.)
-5.  It is a open question as to the effects of LLMs on the development of students' disciplinary expertise.
+1.  ChatGPT produces sentences that are [more informationally dense]{style="background-color: #f5b2c6; opacity: 0.75;"} than that of student writing, but the information density is created using repetitive grammatical patterns.
+2.  Machine-generated writing demonstrates [less modulation of stress or confidence]{style="background-color: #f5b2c6; opacity: 0.75;"}.
+3.  Broadly, LLMs are [not as grammatically nimble]{style="background-color: #f5b2c6; opacity: 0.75;"} as human writers.
+4.  LLM-generated text generally produces academic prose [expressing limited engagement with core, disciplinary concepts]{style="background-color: #f5b2c6; opacity: 0.75;"} either in the way that experts do or in the way that novice students do. (Though LLMs can arrive at something more like expert writing with iterative prompting.)
+5.  It is a open question as to [the effects of LLMs on the development of students' disciplinary expertise]{style="background-color: #f5b2c6; opacity: 0.75;"}.
 
 ## Works Cited

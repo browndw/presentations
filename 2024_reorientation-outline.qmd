@@ -1,0 +1,4 @@
+
+## LLMs History
+
+{{< revealjs file="slides/2024_reorientation.html" height="500px" class="ratio ratio-16x9" >}}
