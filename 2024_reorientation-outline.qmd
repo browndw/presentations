@@ -11,5 +11,6 @@ Here are some of the main takeaways:
 
 * Although ChatGPT seemed to explode into the public consciousness, it is part of a surprisingly long history of technological development.
 * Understanding at least some of that history can help us understand the affordances and limitations of LLMs. They kind of seem like magic, but they're not. 
-* ChatGPT and other LLMs are also part of the inextricable relationship between writing and technology, which doesn't mean that they don't present their own problems and challenges.
-* Research is showing that the writing produced by LLMs don't much look like human writing in a number of important ways.
+* ChatGPT and other LLMs are also part of the inextricable relationship between writing and technology, which doesn't mean that they don't present their own unique problems and challenges.
+* Research is showing that the writing produced by LLMs don't much look like human writing in a number of important ways, which doesn't mean that students shouldn't use them. However, they should be aware that they may not always be performing in the way that they think.
+* It takes a lot of expertise to prompt-engineer your way to an effective (expert-looking) LLM-generated text. How are students going to develop that expertise if they rely on an LLM consistently? (And what counts as *consistently*?
