@@ -1,4 +1,15 @@
 
-## LLMs History
+## Writing & Communication Program Reorienation
+
+August 21, 2024
 
 {{< revealjs file="slides/2024_reorientation.html" height="500px" class="ratio ratio-16x9" >}}
+
+#### There is a lot of information here, and we don't have a lot of time. So some of this we'll just touch on in order to leave space for your questions.
+
+Here are some of the main takeaways:
+
+* Although ChatGPT seemed to explode into the public consciousness, it is part of a surprisingly long history of technological development.
+* Understanding at least some of that history can help us understand the affordances and limitations of LLMs. They kind of seem like magic, but they're not. 
+* ChatGPT and other LLMs are also part of the inextricable relationship between writing and technology, which doesn't mean that they don't present their own problems and challenges.
+* Research is showing that the writing produced by LLMs don't much look like human writing in a number of important ways.
