@@ -2,5 +2,5 @@ project:
   title: "presentations"
   output-dir: docs
 
-editor: visual
+editor: source
 
