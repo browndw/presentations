@@ -929,7 +929,7 @@ The LLM has a propensity to condense information into chunked noun phrases, cons
 
 ::: {.column width="40%"}
 ::: {style="font-size: 80%; padding-top: 25px;"}
-We also created an experiment at scale, with 10,000 samples, across 9 text-types, and querying 6 different models.
+We also created an experiment at scale, with 10,000 samples, across 6 text-types, and querying 6 different models.
 :::
 :::
 ::::
