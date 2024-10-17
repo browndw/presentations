@@ -743,7 +743,7 @@ A Colab with the full code is [here](https://colab.research.google.com/drive/1ea
 
 -   A group at CMU was inspired by claims that were circulating when ChatGPT was first introduced. (e.g., "Wow! I asked ChatGPT to write a podcast and it looks pretty good!!!")
 -   We wondered what the text it produces looks like when it is repeated. (e.g., "What happens if you ask it to write 100 podcasts?")
--   We gave it the same writing prompt that students are given in 36-200, generated 100 introduction, and compared those with introductions written by the actual students and introductions that appear in published, data-driven, academic papers.
+-   We gave it the same writing prompt that students are given in in an introductory data science course, generated 100 introduction, and compared those with introductions written by the actual students and introductions that appear in published, data-driven, academic papers.
 -   Then, we tagged the data using Biber's [-@biber1991variation] features (which counts things like passives, nominalizations, attributive adjectives, etc.).
 
 ## Implications
