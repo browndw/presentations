@@ -912,10 +912,10 @@ modal_freq |>
 
 ## Implications
 
-![Excerpts from texts produced by ChatGPT](img/img_2024_shel/gpt_excerpts_01.png){width="80%"}
+![Excerpts of ChatGPT-generated writing with *Noun + Noun* and *Adj. + Noun* sequences underlined in blue and other characteristic features of machine-generated writing marked in red.](img/img_2024_shel/gpt_excerpts_01.png){width="80%"}
 
 ::: aside
-The LLM has a propensity to condense information into chunked noun phrases, constructed as either *noun* + *noun* or *adjective* + *noun* sequences. Such sequences are sometimes aggregated using the coordinator *and*. On the one hand, these phrases can project a kind of authoritative voice. On the other, their content can range from vague, to ambiguous, to vapid. (What exactly is “a comprehensive dataset encompassing \[..\] healthcare utilization”?) At issue here is what pertinent information is compressed out of these phrases.
+The LLM has a propensity to condense information into chunked noun phrases, constructed as either *noun* + *noun* or *adjective* + *noun* sequences. Such sequences are sometimes aggregated using the coordinator *and*. On the one hand, these phrases can project a kind of authoritative voice. On the other, their content can range from vague, to ambiguous, to vapid. (What exactly is “a comprehensive dataset encompassing \[..\] healthcare utilization”?)
 :::
 
 ## Implications
