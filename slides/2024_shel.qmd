@@ -11,7 +11,7 @@ author:
   - name: David Brown
     orcid: 0000-0001-7745-6354
     email: dwb2@andrew.cmu.edu
-    affiliations: Studies in the History of the Language-13
+    affiliations: Studies in the History of the English Language-13
 date: October 19, 2024
 title-slide-attributes: 
   data-background-image: img/img_2024_shel/2024_shel_qr.svg
@@ -760,7 +760,7 @@ A Colab with the full code is [here](https://colab.research.google.com/drive/1ea
 #| echo: false
 #| tbl-cap: "Top text features discriminating between human- and machine-generated writing. Color-coded cells show the average z score of each feature. R2 and p-value correspond to one-way ANOVAs predicting each feature with text type."
 
-ld1_tbl <- readr::read_csv("data/data_2024_shel/ld1_tbl.csv")
+ld1_tbl <- readr::read_csv("data/data_2024_shel/ld1_tbl.csv", show_col_types = FALSE)
 
 ld1_tbl <- ld1_tbl |> 
   dplyr::mutate(direction = paste0("Features indicating ", direction, "-generated writing")) |>
@@ -769,12 +769,12 @@ ld1_tbl <- ld1_tbl |>
   dplyr::filter(direction == "Features indicating human-generated writing") |>
   gt::gt(groupname_col = 'direction') |>
   gt::cols_label(
-    variable = gt::md("  "),
+    variable = gt::md("--"),
     ChatGPT = gt::md("**ChatGPT<br>n:100**"),
     Published = gt::md("**Published<br>n:100**"),
     Student = gt::md("**Student<br>n:100**"),
-    r.squared = gt::md("***R*^2^**"),
-    p.value = gt::md("***p*-value**")
+    r_squared = gt::md("***R*^2^**"),
+    p_value = gt::md("***p*-value**")
   ) |> 
   gt::fmt_number(
     columns = dplyr::everything(),
@@ -821,12 +821,12 @@ ld1_tbl <- ld1_tbl |>
   dplyr::filter(direction == "Features indicating machine-generated writing") |>
   gt::gt(groupname_col = 'direction') |>
   gt::cols_label(
-    variable = gt::md("  "),
+    variable = gt::md("--"),
     ChatGPT = gt::md("**ChatGPT<br>n:100**"),
     Published = gt::md("**Published<br>n:100**"),
     Student = gt::md("**Student<br>n:100**"),
-    r.squared = gt::md("***R*^2^**"),
-    p.value = gt::md("***p*-value**")
+    r_squared = gt::md("***R*^2^**"),
+    p_value = gt::md("***p*-value**")
   ) |> 
   gt::fmt_number(
     columns = dplyr::everything(),
@@ -1100,7 +1100,9 @@ feature_imp <- feature_imp |>
     domain = c(0, 1 ,2),
     na_color = "#336699"
   ) |>
-  gt::tab_style(
+  gt::cols_width(
+    gt::ends_with("ure") ~ gt::px(100)
+  ) |>  gt::tab_style(
     style = list(
       gt::cell_text(style = "italic",
                 align = "right")
