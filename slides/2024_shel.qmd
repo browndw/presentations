@@ -1120,7 +1120,7 @@ feature_imp |>
 
 ## Implications
 
--   Carrying our principle component analysis (PCA) on the chunk 2 of the human writing, yields a first principle component (PC1) that strongly resembles [Biber's Demension 1](https://www.uni-bamberg.de/fileadmin/eng-ling/fs/Chapter_21/Index.html?23DimensionsofEnglish.html) (Involved vs. Informational Production).
+-   Carrying our principal component analysis (PCA) on the chunk 2 of the human writing, yields a first principal component (PC1) that strongly resembles [Biber's Demension 1](https://www.uni-bamberg.de/fileadmin/eng-ling/fs/Chapter_21/Index.html?23DimensionsofEnglish.html) (Involved vs. Informational Production).
 
 ```{r}
 #| echo: false
@@ -1141,19 +1141,19 @@ ggplot2::ggplot(contrib_df |> dplyr::filter(above_mean == T), ggplot2::aes(x = r
 
 ## Implications
 
-![Projection of human chunk 2 writing onto the first princple component, based on the 67 Biber features.](img/img_2024_shel/pca_human.svg)
+![Projection of human chunk 2 writing onto the first principal component, based on the 67 Biber features.](img/img_2024_shel/pca_human.svg)
 
 ## Implications
 
-![Projection of human chunk 2 writing and Llama Base onto the first princple component.](img/img_2024_shel/pca_base.svg)
+![Projection of human chunk 2 writing and Llama Base onto the first principal component.](img/img_2024_shel/pca_base.svg)
 
 ## Implications
 
-![Projection of human chunk 2 writing and Llama Instruct onto the first princple component.](img/img_2024_shel/pca_instruct.svg)
+![Projection of human chunk 2 writing and Llama Instruct onto the first principal component.](img/img_2024_shel/pca_instruct.svg)
 
 ## Implications
 
-![Projection of human chunk 2 writing and GPT 4o onto the first princple component.](img/img_2024_shel/pca_gpt.svg)
+![Projection of human chunk 2 writing and GPT 4o onto the first principal component.](img/img_2024_shel/pca_gpt.svg)
 
 ## Implications
 
