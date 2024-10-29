@@ -1,0 +1,61 @@
+Rank,Word,Rate,Model
+1,deborah,52,Llama 3 8B
+2,rambo,22,Llama 3 8B
+3,matty,20,Llama 3 8B
+4,goodnight,18,Llama 3 8B
+5,ml,15,Llama 3 8B
+6,merlin,13,Llama 3 8B
+7,worcester,11,Llama 3 8B
+8,fay,10,Llama 3 8B
+9,missy,10,Llama 3 8B
+10,elisa,10,Llama 3 8B
+1,unease,101,Llama 3 8B Instruct
+2,continuation,52,Llama 3 8B Instruct
+3,palpable,48,Llama 3 8B Instruct
+4,reminder,33,Llama 3 8B Instruct
+5,pang,29,Llama 3 8B Instruct
+6,rut,29,Llama 3 8B Instruct
+7,waft,28,Llama 3 8B Instruct
+8,prioritize,27,Llama 3 8B Instruct
+9,grapple,24,Llama 3 8B Instruct
+10,camaraderie,23,Llama 3 8B Instruct
+1,bananas,31,Llama 3 70B
+2,paperback,30,Llama 3 70B
+3,bam,26,Llama 3 70B
+4,verona,25,Llama 3 70B
+5,filth,19,Llama 3 70B
+6,rekall,17,Llama 3 70B
+7,denis,14,Llama 3 70B
+8,darry,12,Llama 3 70B
+9,ebook,12,Llama 3 70B
+10,janice,12,Llama 3 70B
+1,unease,63,Llama 3 70B Instruct
+2,palpable,47,Llama 3 70B Instruct
+3,continuation,29,Llama 3 70B Instruct
+4,shoutout,28,Llama 3 70B Instruct
+5,intricate,27,Llama 3 70B Instruct
+6,pang,25,Llama 3 70B Instruct
+7,camaraderie,24,Llama 3 70B Instruct
+8,policymaker,24,Llama 3 70B Instruct
+9,prioritize,24,Llama 3 70B Instruct
+10,reminder,24,Llama 3 70B Instruct
+1,camaraderie,171,GPT-4o Mini 
+2,tapestry,147,GPT-4o Mini 
+3,palpable,145,GPT-4o Mini 
+4,grapple,131,GPT-4o Mini 
+5,intricate,129,GPT-4o Mini 
+6,fleeting,124,GPT-4o Mini 
+7,ignite,122,GPT-4o Mini 
+8,vibrant,92,GPT-4o Mini 
+9,amidst,90,GPT-4o Mini 
+10,cacophony,89,GPT-4o Mini 
+1,camaraderie,162,GPT-4o
+2,tapestry,155,GPT-4o
+3,intricate,119,GPT-4o
+4,underscore,107,GPT-4o
+5,unspoken,102,GPT-4o
+6,amidst,100,GPT-4o
+7,palpable,95,GPT-4o
+8,solace,95,GPT-4o
+9,fleeting,84,GPT-4o
+10,unravel,83,GPT-4o
