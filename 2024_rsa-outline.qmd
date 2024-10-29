@@ -3,9 +3,9 @@
 
 October 19, 2024
 
-{{< revealjs file="slides/2024_shel.html" height="500px" class="ratio ratio-16x9" >}}
+{{< revealjs file="slides/2024_rsa.html" height="500px" class="ratio ratio-16x9" >}}
 
-#### There is a lot of information here, Given the time constraints, some of what is here may be skipped over, but I wanted to make it available in case it is of interest. You can also find our study of student writing at [*Written Commmunication*](https://doi.org/10.1177/07410883241263528).
+#### There is a lot of information here, Given the time constraints, some of what is here may be skipped over, but I wanted to make it available in case it is of interest. You can also find our study of student writing at [*Written Commmunication*](https://doi.org/10.1177/07410883241263528) and a preprint of our comparisons of LLMs on [arXiv](https://arxiv.org/abs/2410.16107)
 
 Here are some of the main takeaways:
 

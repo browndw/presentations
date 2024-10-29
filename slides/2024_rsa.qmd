@@ -192,6 +192,13 @@ commercial publishers
 
 ### Writing is inseparable from technological change
 
+-   On the one hand, we can acknowledge the anxieties that have accompanied new writing technologies in the past.
+-   On the other hand, we can recognize that LLMs introduce novel challenges to communicative processes and practices. (Generative models are, after all, the functional opposite of erasers.)
+
+## History
+
+### Writing is inseparable from technological change
+
 ::: {style="font-size: 75%;"}
 In 2009, researchers at Google published an article that coincided with the release of its N-gram Viewer and the corresponding data tables [@halevy2009unreasonable].
 :::
@@ -360,14 +367,14 @@ Emergence of ML
 
 \
 
-| Preceding | Word | Following |
-|-------------------:|:---------------:|-----------------------------------|
-| upscaling generally hold | fast | during a 4K 60FPS gaming session. |
-| a dragster, going | fast | in a straight line is actually pretty boring |
-| The benefits of the | fast | can be maintained long term, |
-| adopted slowly, but comes on | fast | once it's hit the mainstream |
-| They simply disagree on how | fast | to go and how best to get there in superseding it. |
-| which appeared stuck | fast | in the ground it had plowed up |
+|                    Preceding | Word | Following                                          |
+|--------------------:|:---:|-----------------------------------|
+|     upscaling generally hold | fast | during a 4K 60FPS gaming session.                  |
+|            a dragster, going | fast | in a straight line is actually pretty boring       |
+|          The benefits of the | fast | can be maintained long term,                       |
+| adopted slowly, but comes on | fast | once it's hit the mainstream                       |
+|  They simply disagree on how | fast | to go and how best to get there in superseding it. |
+|         which appeared stuck | fast | in the ground it had plowed up                     |
 
 ## The beginnings of NLP
 
@@ -375,14 +382,14 @@ Emergence of ML
 
 \
 
-| Preceding | Word | Following |
-|-------------------:|:---------------:|-----------------------------------|
-| upscaling generally [hold]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [during]{style="background-color: #f5b2c6; opacity: 0.75;"} a 4K 60FPS gaming session. |
-| a dragster, [going]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in]{style="background-color: #f5b2c6; opacity: 0.75;"} a straight line is actually pretty boring |
-| The benefits of [the]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [can]{style="background-color: #f5b2c6; opacity: 0.75;"} be maintained long term, |
-| adopted slowly, but comes [on]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [once]{style="background-color: #f5b2c6; opacity: 0.75;"} it's hit the mainstream |
-| They simply disagree on [how]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [to]{style="background-color: #f5b2c6; opacity: 0.75;"} go and how best to get there in superseding it. |
-| which appeared [stuck]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in]{style="background-color: #f5b2c6; opacity: 0.75;"} the ground it had plowed up |
+|                                                                         Preceding | Word | Following                                                                                               |
+|--------------------:|:---:|-----------------------------------|
+|     upscaling generally [hold]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [during]{style="background-color: #f5b2c6; opacity: 0.75;"} a 4K 60FPS gaming session.                  |
+|            a dragster, [going]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in]{style="background-color: #f5b2c6; opacity: 0.75;"} a straight line is actually pretty boring       |
+|          The benefits of [the]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [can]{style="background-color: #f5b2c6; opacity: 0.75;"} be maintained long term,                       |
+| adopted slowly, but comes [on]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [once]{style="background-color: #f5b2c6; opacity: 0.75;"} it's hit the mainstream                       |
+|  They simply disagree on [how]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [to]{style="background-color: #f5b2c6; opacity: 0.75;"} go and how best to get there in superseding it. |
+|         which appeared [stuck]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in]{style="background-color: #f5b2c6; opacity: 0.75;"} the ground it had plowed up                     |
 
 ## The beginnings of NLP
 
@@ -390,14 +397,14 @@ Emergence of ML
 
 \
 
-| Preceding | Word | Following |
-|-------------------:|:---------------:|-----------------------------------|
-| upscaling [generally hold]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [during a]{style="background-color: #f5b2c6; opacity: 0.75;"} 4K 60FPS gaming session. |
-| a [dragster, going]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in a]{style="background-color: #f5b2c6; opacity: 0.75;"} straight line is actually pretty boring |
-| The benefits [of the]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [can be]{style="background-color: #f5b2c6; opacity: 0.75;"} maintained long term, |
-| adopted slowly, but [comes on]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [once it's]{style="background-color: #f5b2c6; opacity: 0.75;"} hit the mainstream |
-| They simply disagree [on how]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [to go]{style="background-color: #f5b2c6; opacity: 0.75;"} and how best to get there in superseding it. |
-| which [appeared stuck]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in the]{style="background-color: #f5b2c6; opacity: 0.75;"} ground it had plowed up |
+|                                                                         Preceding | Word | Following                                                                                               |
+|--------------------:|:---:|-----------------------------------|
+|     upscaling [generally hold]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [during a]{style="background-color: #f5b2c6; opacity: 0.75;"} 4K 60FPS gaming session.                  |
+|            a [dragster, going]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in a]{style="background-color: #f5b2c6; opacity: 0.75;"} straight line is actually pretty boring       |
+|          The benefits [of the]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [can be]{style="background-color: #f5b2c6; opacity: 0.75;"} maintained long term,                       |
+| adopted slowly, but [comes on]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [once it's]{style="background-color: #f5b2c6; opacity: 0.75;"} hit the mainstream                       |
+|  They simply disagree [on how]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [to go]{style="background-color: #f5b2c6; opacity: 0.75;"} and how best to get there in superseding it. |
+|         which [appeared stuck]{style="background-color: #f5b2c6; opacity: 0.75;"} | fast | [in the]{style="background-color: #f5b2c6; opacity: 0.75;"} ground it had plowed up                     |
 
 ## The beginnings of NLP
 
