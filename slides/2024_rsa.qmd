@@ -1,5 +1,5 @@
 ---
-title: Large Language Models
+title: Large Language Models &#127875;
 subtitle: How we got here and how that history can help us evaluate what they produce
 format: 
   clean-revealjs:
