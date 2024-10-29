@@ -1,0 +1,15 @@
+
+## Studies in the History of the English Language
+
+October 19, 2024
+
+{{< revealjs file="slides/2024_rsa.html" height="500px" class="ratio ratio-16x9" >}}
+
+#### There is a lot of information here, Given the time constraints, some of what is here may be skipped over, but I wanted to make it available in case it is of interest. You can also find our study of student writing at [*Written Commmunication*](https://doi.org/10.1177/07410883241263528) and a preprint of our comparisons of LLMs on [arXiv](https://arxiv.org/abs/2410.16107)
+
+Here are some of the main takeaways:
+
+* Although ChatGPT seemed to explode into the public consciousness, it is part of a surprisingly long history of technological development.
+* Understanding at least some of that history can help us understand the affordances and limitations of LLMs. They kind of seem like magic, but they're not. 
+* ChatGPT and other LLMs are also part of the inextricable relationship between writing and technology, which doesn't mean that they don't present their own unique problems and challenges.
+* Research is showing that the writing produced by LLMs don't much look like human writing in a number of important ways, which doesn't mean that writers (whether students, instructors, or professionals) shouldn't use them. However, they should be aware that they may not always be performing in the way that they think.
