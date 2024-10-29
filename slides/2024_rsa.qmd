@@ -11,7 +11,7 @@ author:
   - name: David Brown
     orcid: 0000-0001-7745-6354
     email: dwb2@andrew.cmu.edu
-    affiliations: RSA
+    affiliations: RSA (Three Rivers)
 date: October 31, 2024
 title-slide-attributes: 
   data-background-image: img/img_2024_rsa/2024_rsa_qr.svg
