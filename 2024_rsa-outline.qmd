@@ -1,7 +1,7 @@
 
 ## Rhetoric Society of America (Three Rivers)
 
-October 31, 2024 &#127875;
+October 31, 2024
 
 {{< revealjs file="slides/2024_rsa.html" height="500px" class="ratio ratio-16x9" >}}
 
