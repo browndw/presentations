@@ -36,9 +36,17 @@ jobs:
         - name: Set up Quarto
           uses: quarto-dev/quarto-actions/setup@v2
 
-        - name: Publish to GitHub Pages (and render)
-          uses: quarto-dev/quarto-actions/publish@v2
+        - name: Render site with Quarto
+          run: quarto render
+
+        - name: Add .nojekyll file
+          run: touch docs/.nojekyll
+
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
           with:
-            target: gh-pages # renderred html files will be pushed here
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: docs
+            destination_dir: docs
+            force_orphan: true
