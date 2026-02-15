@@ -1,0 +1,35 @@
+
+## Writing Analytics Conference
+
+February 19, 2026
+
+{{< revealjs file="slides/2026_wac.html" height="500px" class="ratio ratio-16x9" >}}
+
+### Beyond the "Feeling" of AI: A Multidimensional Sentiment Analysis Approach to Understanding and Teaching About LLM-Generated Academic Writing
+
+This presentation addresses a critical pedagogical challenge: writing instructors increasingly report an intuitive "feeling" that something is wrong with LLM-generated academic writing, yet lack concrete language to discuss these differences with students. We introduce multivariate sentiment analysis as both a research methodology and an accessible teaching tool for making visible the affective dimensions that distinguish human academic writing from LLM outputs.
+
+#### Main Takeaways:
+
+* **The Pedagogical Problem**: Instructors recognize inappropriate tone and excessive positivity in LLM writing but lack systematic methods to identify and discuss these differences with students and instructors.
+
+* **Our Approach**: Using the GoEmotions sentiment analysis model (28 emotion categories) applied to the Human-AI Parallel Corpus v2 in English (HAP-E-2), we quantify what experienced writers intuitively recognize, transforming impressionistic observations into teachable knowledge.
+
+* **Key Findings**: 
+  - GPT-4o uses approximately 4x more approval language than human academic writers (31.7% vs. 8.3%) and expresses that approval with broader scope and less hedging
+  - Human academic writing maintains 88.6% neutral language compared to GPT-4o's 65.5%
+  - Different LLM models exhibit distinct emotional patterns that vary from human writing in different ways—highlighting that these register differences will persist as models evolve
+
+* **Pedagogical Implications**: Sentiment analysis provides accessible metalanguage (approval, admiration, disapproval) for discussing register appropriateness, enabling instructors to transform vague warnings ("this doesn't sound right") into evidence-based explanations and helping students develop critical awareness of when emotional register deviates from disciplinary norms.
+
+* **The Power of Naming**: By providing concrete, measurable patterns, we transform instructor helplessness into informed teaching and give students agency to make deliberate choices about when and how to use generative AI tools in ways that enhance rather than limit their academic development.
+
+#### Related Resources:
+
+* **Our recent PNAS study**: [Do LLMs Write like Humans](https://www.pnas.org/doi/abs/10.1073/pnas.2422455122) — examining broader implications of LLMs for knowledge production
+
+* **Our earlier studies of student writing**: [*Written Communication*](https://doi.org/10.1177/07410883241263528) — examining how student academic writing differs from expert and AI-generated texts; [*Journal of Statistics and Data Science Education*](https://doi.org/10.1080/26939169.2025.2497547) — comparing patterns in statistical reports authored by LLMs to those authored by students and by published researchers
+
+* **International application**: [Stylistic Benchmark for Czech](https://korpus.cz/stylisticbenchmark/) — researchers applying our methodological approach to Czech language texts, demonstrating the cross-linguistic potential of sentiment analysis for understanding LLM-generated writing
+
+* **HAP-E-2 Corpus**: Available at [Hugging Face](https://huggingface.co/datasets/browndw/human-ai-parallel-corpus-2) for researchers interested in comparative LLM analysis
