@@ -1,0 +1,48 @@
+---
+title: "Research Presentations"
+---
+
+This site contains presentations on research examining how Large Language Models (LLMs) generate text, with a particular focus on the implications for writing instruction and academic writing.
+
+## 2026 Presentations
+
+### [Writing Analytics Conference](2026_wac-outline.qmd)
+**Beyond the "Feeling" of AI: A Multidimensional Sentiment Analysis Approach to Understanding and Teaching About LLM-Generated Academic Writing**  
+*February 19, 2026*
+
+Addresses the pedagogical challenge of helping instructors articulate what feels "wrong" about LLM-generated academic writing. Using multivariate sentiment analysis applied to the HAP-E-2 corpus, we demonstrate that GPT-4o uses 4x more approval language than human academic writers and show how these findings can inform classroom practice, particularly for L2 and multilingual students.
+
+---
+
+## 2024 Presentations
+
+### [SHEL Conference](2024_shel-outline.qmd)
+**Studies in the History of the English Language**  
+*October 19, 2024*
+
+Explores the historical context of language modeling technologies and demonstrates how current LLMs produce text that differs systematically from human writing in linguistic features, register, and rhetorical effectiveness.
+
+### [RSA Conference](2024_rsa-outline.qmd)
+**Rhetoric Society of America (Three Rivers)**  
+*October 31, 2024*
+
+Examines the relationship between writing and technology through computational analysis of LLM outputs, showing distinct patterns in how different models generate academic prose compared to expert and novice human writers.
+
+### [Writing Program Reorientation](2024_reorientation-outline.qmd)
+**Writing & Communication Program Reorientation**  
+*August 21, 2024*
+
+A practical introduction to LLM technologies for writing instructors, covering the history of NLP, how these models work, and the implications for student writing and pedagogy.
+
+---
+
+## Related Publications
+
+- [Journal of Statistics and Data Science Education study](https://doi.org/10.1080/26939169.2025.2497547) - Ccmparing patterns in statistical reports authored by LLMs to those authored by students and by published researchers
+- [Written Communication study](https://doi.org/10.1177/07410883241263528) - Comparing student, expert, and AI-generated academic writing
+- [PNAS study](https://www.pnas.org/doi/abs/10.1073/pnas.2422455122) - ystematic comparisons across multiple LLM models
+- [HAP-E-2 Corpus](https://huggingface.co/datasets/browndw/human-ai-parallel-corpus-2) - Human-AI Parallel Corpus in English
+
+---
+
+*All presentations use Quarto with Reveal.js format.*
