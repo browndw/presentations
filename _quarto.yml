@@ -1,6 +1,31 @@
 project:
-  title: "presentations"
+  type: website
   output-dir: docs
+
+website:
+  title: "Presentations"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "2026"
+        menu:
+          - text: "Writing Analytics Conference"
+            href: 2026_wac-outline.qmd
+      - text: "2024"
+        menu:
+          - text: "SHEL Conference"
+            href: 2024_shel-outline.qmd
+          - text: "RSA Conference"
+            href: 2024_rsa-outline.qmd
+          - text: "Reorientation"
+            href: 2024_reorientation-outline.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
 
 editor: source
 
