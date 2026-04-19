@@ -1,8 +1,6 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - slides/img/**
 
 website:
   title: "Presentations"
@@ -14,6 +12,8 @@ website:
         menu:
           - text: "Writing Analytics Conference"
             href: 2026_wac-outline.qmd
+          - text: "SHEL Conference"
+            href: 2026_shel-outline.qmd
       - text: "2024"
         menu:
           - text: "SHEL Conference"

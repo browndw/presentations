@@ -1,0 +1,220 @@
+---
+title: Measuring Morphological Productivity
+subtitle: Building computational tools for historical English analysis
+format: 
+  clean-revealjs:
+    transition: fade
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: David Brown
+    orcid: 0000-0001-7745-6354
+    email: dwb2@andrew.cmu.edu
+    affiliations: Carnegie Mellon University
+  - name: Christopher Palmer
+    orcid: 0000-0002-5202-5555
+    email: cpalme20@kennesaw.edu
+    affiliations: Kennesaw State University
+date: April 30, 2026
+title-slide-attributes: 
+  data-background-image: img/img_2026_shel/2026_shel_qr.svg
+  data-background-size: 15%
+  data-background-position: 80% 80%
+bibliography: refs/refs_2026_shel.bib
+---
+
+# Overview {background-color="#40666e"}
+
+## Overview
+
+### Problem
+
+- How to measure morphological productivity and changes in morphological productivity over time?
+- Traditional use of hapax legomenon as a proxy has known limitiations (sensitive to corpus size, most data is discarded, etc.) [@pankratz2022shannon; @pankratz2025linguistic; @feltgen2025testing; @baayen2008corpus].
+- Automatic segmentation is challenging [@baayen2011amorphous].
+
+## Overview
+
+### Solution
+
+- Train a model that can reliably segment large corpora accurately and effeciently.
+- Create a Python package to orchestrate processing and segmentation.
+- Use segmentation as an analytic bridge between raw token data and productivity measures.
+
+# Development {background-color="#40666e"}
+
+## Development
+
+### Training data preparation
+
+- WikiMorph Dataset [@yarbro2021wikimorph]
+- Auditing training data with more than 300,000 candidates (inconsistent segmentation, spelling errors, etc.)
+- Balance lexicalization with the preservation of historical segmentation
+
+## Development
+
+### Example source record (WikiMorph entry for *abduction*):
+
+```
+{
+    "Word": "abduction",
+        "PoS": "Noun",
+        "Morphemes": [
+            {
+                "Affix": "abduct",
+                "Language": "en",
+                "PoS": "Verb",
+                "Meaning": "To draw away, as a limb or other part, from the median axis of the body.",
+                "Etymology Compounds": [
+                    {
+                        "Affix": "ab",
+                        "Language": "la",
+                        "Decoded": "ab",
+                        "PoS": null,
+                        "Meaning": "away"
+                    },
+```
+
+## Development
+
+### Example of the lexicalization problem — historical affixes that are not typically segmentable in Present Day English:
+
+::: {style="font-size: 75%; color: #636363;"}
+Frequentive: *giggle*, *wriggle*, *dazzle*, *twinkle*
+
+Instrumental: *handle*, *ladle*
+
+Adjectival (prone to): *brittle*
+:::
+
+## Development
+
+### Model and model training
+
+::: {style="font-size: 75%;"}
+- Base model: ByT5-small, fine-tuned for English morphological segmentation.
+- Task formulation: word in, segmented morpheme string out.
+- Why byte-level modeling:
+    - avoids dependence on a fixed subword vocabulary
+    - handles orthographic variation, apostrophes, doubled letters, and low-frequency forms more naturally
+    - remains open-vocabulary, which matters for historical and uncommon lexical items
+- Why seq2seq generation rather than token classification: generating the segmented string directly is more natural than predicting a label for each character and reconstructing the output afterward.
+- Main tradeoff: byte-level modeling is slower than subword approaches, so caching and batching support in the package matters.
+:::
+
+```
+Results: Loss: 0.0404 — Exact Match: 0.9474
+```
+
+## Development
+
+### Package architecture
+
+::: {style="font-size: 75%;"}
+- The package is organized in layers, from low-level inference to high-level analysis.
+- At the base: a parser that segments words, and a cache that stores results so large corpora don't have to be re-parsed from scratch.
+- Above that: a decomposition layer that can break complex morpheme strings into their constituent parts. The depth of decomposition is adjustable — useful because different research questions call for different levels of morphological detail.
+- At the top: a productivity layer that turns segmented tokens into analysis-ready tables, and a higher-level analyzer that handles the full workflow end-to-end.
+- The analyzer also integrates with spaCy: token processing can draw on spaCy's POS tags and morphological attributes, and the model's segmentation output can be checked against spaCy's own morph analysis. This provides a practical validation layer and allows the two sources of morphological information to complement each other.
+- The package also ships with curated internal resources — affix metadata, decomposition maps, a protected monomorpheme list — so it works out of the box without external configuration.
+:::
+
+## Development
+
+### Key choices and affordances
+
+::: {style="font-size: 75%;"}
+- The package is built around token-frequency input rather than around one corpus-processing stack.
+- The core install is analysis-focused, while prep and audit workflows are optional.
+- Caching is treated as part of the design, not as an afterthought.
+- Multiple decomposition strategies are exposed because different research questions want different levels of morphological depth.
+- Role labels are inferred from supporting evidence rather than treated as fixed truths.
+- The main affordances are:
+    - quick single-word inspection
+    - batch parsing for corpus inventories
+    - reusable cached parsing
+    - productivity summaries over time
+    - support tables that move from abstract measures back to example words and bases
+    - a higher-level analyzer workflow for researchers who do not want to wire the entire pipeline by hand
+:::
+
+## Development
+
+### Current development status
+
+- The project now includes a reusable package, not just a trained model.
+- Core modules are in place for parsing, caching, decomposition, analyzer workflows, productivity summaries, affix metadata, and matrix transforms.
+- Optional prep modules exist for auditing training data and rebuilding package resources.
+- Versioned resources are already bundled with the library.
+- The codebase has broad automated test coverage across parser behavior, productivity logic, decomposition, caching, affix resources, and corpus preprocessing.
+- The package is still pre-release, but it is already usable as a research workflow.
+
+# Example {background-color="#40666e"}
+
+## Example
+
+### Produce summary tables for specified morphemes
+
+::: {style="font-size: 75%;"}
+| morpheme | N    | V   | V1  | F   | Y    | I    | P baayen | S baayen | H    | H norm | dominant morpheme family | dominant morpheme function | dominant role confidence |
+|----------|------|-----|-----|-----|------|------|----------|----------|------|--------|--------------------------|----------------------------|--------------------------|
+| ity      | 5266 | 230 | 65  | 230 | 0.04 | 0.04 | 0.01     | 0.28     | 6.16 | 0.79   | derivational             | nominal                    | 0.85                     |
+| ment     | 3791 | 134 | 29  | 134 | 0.04 | 0.04 | 0.01     | 0.22     | 5.22 | 0.74   | derivational             | nominal                    | 0.85                     |
+| ness     | 3327 | 344 | 139 | 344 | 0.10 | 0.10 | 0.04     | 0.40     | 6.43 | 0.76   | derivational             | nominal                    | 0.85                     |
+| age      | 315  | 25  | 9   | 25  | 0.08 | 0.08 | 0.03     | 0.36     | 2.19 | 0.47   | derivational             | derivational unspecified   | 0.80                     |
+| ly       | 220  | 14  | 11  | 14  | 0.06 | 0.06 | 0.05     | 0.79     | 0.80 | 0.21   | derivational             | adverbial or derivational  | 0.70                     |
+:::
+
+Target derivational suffix summary from the narrow scoped run on CLMET [@de2005corpus]
+
+## Example
+
+### Table values
+
+::: {style="font-size: 75%;"}
+- `N`: total token count contributed by this morpheme in the preview sample.
+- `V`: number of distinct word types containing the morpheme in this final-segment slice.
+- `V1`: number of hapax types, i.e. types that occur once in the sample.
+- `F`, `Y`, `I`: diversity and productivity summaries. Read them comparatively across rows rather than as standalone verdicts.
+- `P baayen`: hapax-based productivity, useful for asking whether a suffix appears to be recruiting new types in the sample.
+- `S baayen`: expansion potential relative to the observed vocabulary in the sample.
+- `H` and `H norm`: entropy-based dispersion measures that help distinguish concentrated rows from rows spread across many types.
+- `dominant morpheme family`, `dominant morpheme function`, and `dominant role confidence`: the current best role label inferred from the supporting token evidence.
+:::
+
+## Example
+
+### Preview support for historically or structurally informative rows
+
+::: {style="font-size: 75%;"}
+| morpheme | N   | V  | example tokens                                   | example segmentations                                  | top bases                            | top base frequencies | dominant morpheme family | dominant morpheme function | dominant role confidence |
+|----------|-----|----|--------------------------------------------------|--------------------------------------------------------|--------------------------------------|----------------------|--------------------------|----------------------------|--------------------------|
+| ion      | 123 | 15 | ["veneration", "consultation", …   "dissension"] | ["venerate ion", "consult ate ion", … "dissent   ion"] | ["venerate", "consult", … "dissent"] | [54, 17, … 9]        | derivational             | nominal                    | 0.85                     |
+| ness     | 73  | 12 | ["eagerness", "wretchedness", …   "giddiness"]   | ["eager ness", "wretch ed ness", … "giddy   ness"]     | ["eager", "wretch", … "list"]        | [46, 12, … 2]        | derivational             | nominal                    | 0.85                     |
+| ive      | 14  | 3  | ["inconclusive", "abortive", "Inattentive"]      | ["in conclude ive", "abort ive", "in attent   ive"]    | ["in", "abort"]                      | [9, 5]               | derivational             | adjectival                 | 0.85                     |
+| ical     | 7   | 2  | ["periodical", "Saracenical"]                    | ["period ical", "saracen ical"]                        | ["period", "saracen"]                | [6, 1]               | derivational             | adjectival                 | 0.85                     |
+:::
+
+Preview summary for *-ion*, *-ness*, *-ive*, and *-ical*.
+
+## Example
+
+### Retrieve affix/base combinations
+
+| base      | morpheme | frequency | token types |
+|-----------|----------|-----------|-------------|
+| happy     | ness     | 447       | 1           |
+| weak      | ness     | 180       | 3           |
+| tender    | ness     | 169       | 3           |
+| uneasy    | ness     | 161       | 2           |
+| good      | ness     | 146       | 2           |
+| great     | ness     | 110       | 2           |
+| kind      | ness     | 94        | 2           |
+| polite    | ness     | 74        | 1           |
+| conscious | ness     | 69        | 2           |
+| fond      | ness     | 65        | 2           |
+
+Top bases for *-ness* from the narrow scoped run
+
+## Works Cited

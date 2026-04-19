@@ -2,9 +2,13 @@
 title: "Research Presentations"
 ---
 
-This site contains presentations on research examining how Large Language Models (LLMs) generate text, with a particular focus on the implications for writing instruction and academic writing.
-
 ## 2026 Presentations
+
+### [SHEL Conference](2026_shel-outline.qmd)
+**Measuring Morphological Productivity: Building Computational Tools for Historical English Analysis**  
+*April 30, 2026*
+
+Describes the development process of a model for automated morphological segmentation and demonstrates the model’s application to the Corpus of Late Modern English Texts (CLMET). Beginning with Wiktionary’s morphological data (~300,000 words), we developed systematic auditing to ensure models learn historically accurate patterns. Three challenges emerged: (1) consistency—standardizing contributor conventions (*-d* vs. *-ed*); (2) etymological fidelity—balancing synchronic and diachronic analysis (e.g., treating *wriggle* as monomorphemic in training data while preserving the historical *wrig_le* boundary in metadata for diachronic research); (3) temporal sensitivity—avoiding anachronistic decomposition of loans like *naïveté*.
 
 ### [Writing Analytics Conference](2026_wac-outline.qmd)
 **Beyond the "Feeling" of AI: A Multidimensional Sentiment Analysis Approach to Understanding and Teaching About LLM-Generated Academic Writing**  

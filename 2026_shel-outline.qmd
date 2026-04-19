@@ -1,0 +1,11 @@
+
+## Studies in the History of the English Language
+
+April 30, 2026
+
+{{< revealjs file="slides/2026_shel.html" height="500px" class="ratio ratio-16x9" >}}
+
+
+* Morphological productivity research has traditionally been constrained by the difficulty of segmentation at scale.
+* This project offers a practical path through that: a model accurate enough to trust, wrapped in a package designed for linguistic research.
+* The output is not just parsed text — it is a set of analysis-ready tables that connect abstract productivity measures back to real words, real bases, and real historical usage patterns.
